@@ -442,21 +442,20 @@ a{
   padding:20px;
   position: relative;
 }
-.offer .container .offer_item .box::after{
+.offer .container .box::before{
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+  transition: 0.7s;
+  background-color:rgba(45, 44, 44, 0.3);
+}
+.offer .container .box:hover::before {
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  background-color:rgba(45, 44, 44, 0.3);
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.offer .container .offer_item .box:hover::after{
-  visibility: visible;
-  opacity: 1;
 }
 .offer .container .offer_item .box i{
   font-size: 34px;
@@ -694,18 +693,16 @@ a{
 .pricing .pricing-content .box::after{
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 0;
+  height:0;
   left: 0;
   top: 0;
   background-color:rgba(45, 44, 44, 0.2);
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 1s ease-out;
+  transition: 0.5s;
 }
 .pricing .pricing-content .box:hover::after{
-  visibility: visible;
-  opacity: 1;
+  width: 100%;
+  height: 100%;
 }
 .pricing .pricing-content .box .box_text{
   text-transform: uppercase;
@@ -759,7 +756,7 @@ a{
 }
 @media (max-width: 767px) {
   .staff{
-    height: 650px;
+    height: 700px;
   }
 }
 .staff .overlay{
